@@ -5,6 +5,11 @@ Tutte le modifiche rilevanti a questo modulo sono documentate in questo file.
 Il formato è basato su [Keep a Changelog](https://keepachangelog.com/it/1.1.0/)
 e questo progetto aderisce al [Semantic Versioning](https://semver.org/lang/it/).
 
+## [2.2.0] - 2026-11-10
+
+### Added
+- Blog Mageplaza: canonical sulle pagine elenco (indice, categoria, tag, argomento, mese, autore), che prima non lo avevano (Mageplaza lo stampa solo sugli articoli). Punta all'URL richiesto senza query string; la paginazione `?p=N` (N > 1) resta canonical di se stessa.
+
 ## [2.1.1] - 2026-10-27
 
 ### Fixed
