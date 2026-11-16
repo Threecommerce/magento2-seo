@@ -5,6 +5,22 @@ Tutte le modifiche rilevanti a questo modulo sono documentate in questo file.
 Il formato è basato su [Keep a Changelog](https://keepachangelog.com/it/1.1.0/)
 e questo progetto aderisce al [Semantic Versioning](https://semver.org/lang/it/).
 
+## [2.3.0] - 2026-11-16
+
+### Added
+- Pagine CMS: campo **Hreflang Key** (colonna `cms_page.hreflang_key`) nella sezione SEO. Le pagine di store view diverse con la stessa chiave sono alternative hreflang l'una dell'altra anche con identifier diversi (es. `chi-siamo` ↔ `about-us`); vuoto = identifier della pagina. Per ogni store vince la pagina assegnata allo store rispetto a quella su *All Store Views*; rispettato *Enable Hreflang* di ogni pagina. Home page invariata.
+- Blog Mageplaza (solo se `Mageplaza_Blog` è attivo): `<link rel="alternate" hreflang>` su home del blog, post e categorie. Home: la home del blog di ogni store con il blog attivo; post/categorie: quelli abilitati, pubblicati e visibili nello store con la stessa chiave hreflang. URL costruiti come Mageplaza (URL base dello store + prefisso + url_key + suffisso dello store). Configurazione *Seo Config › Blog Mageplaza › Mostra Hreflang*.
+- Tabella `threecommerce_seo_hreflang` (entity_type, entity_id, hreflang_key) per le chiavi di post (`mageplaza_post`) e categorie (`mageplaza_category`); senza riga la chiave è l'`url_key`. Nessuna dipendenza dalle tabelle Mageplaza.
+- Comando `bin/magento seo:hreflang:link <entity_type> <entity_id> <key>` (e `--unset`) per collegare post/categorie tradotti; invalida la full page cache delle pagine coinvolte.
+- `etc/db_schema_whitelist.json`.
+- Cambio lingua sulla pagina tradotta: store switcher `Model/StoreSwitcher/HreflangAlternate` (prima di `rewriteUrl` del core) che, cambiando store view dal selettore lingua o dal redirect geoip, porta sulla versione tradotta di pagina CMS, post, categoria o home del blog Mageplaza invece che sulla home o su un 404. Stesse regole dell'hreflang; query string mantenuta (tranne `___store`/`___from_store`); post/categoria del blog senza traduzione → home del blog dello store di destinazione (niente 404); altre pagine senza traduzione: l'URL resta quello del core. Configurazione *Seo Config › Cms Page › Cambio lingua sulla pagina tradotta* (default Sì, indipendente da *Mostra Hreflang*).
+
+### Changed
+- Regole di corrispondenza delle alternative (pagine CMS e blog Mageplaza) spostate in `Model/Alternates`, usato sia dai blocchi hreflang sia dal cambio lingua.
+
+### Note
+- Sitemap del blog Mageplaza verificata con una store view su `/en/`: URL per store (`/en/blog/post/...`) e solo i post/categorie visibili nello store; nessuna modifica necessaria.
+
 ## [2.2.0] - 2026-11-10
 
 ### Added
