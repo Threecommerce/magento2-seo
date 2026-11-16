@@ -5,6 +5,11 @@ Tutte le modifiche rilevanti a questo modulo sono documentate in questo file.
 Il formato è basato su [Keep a Changelog](https://keepachangelog.com/it/1.1.0/)
 e questo progetto aderisce al [Semantic Versioning](https://semver.org/lang/it/).
 
+## [2.3.1] - 2026-11-16
+
+### Changed
+- Configurazione (*Seo Config*): etichette e commenti in inglese nel codice e traduzione italiana in `i18n/it_IT.csv`. Con l'admin in inglese le voci (prima scritte in italiano) sono in inglese; con l'admin in italiano restano in italiano.
+
 ## [2.3.0] - 2026-11-16
 
 ### Added
