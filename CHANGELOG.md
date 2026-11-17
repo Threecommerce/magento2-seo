@@ -5,6 +5,11 @@ Tutte le modifiche rilevanti a questo modulo sono documentate in questo file.
 Il formato è basato su [Keep a Changelog](https://keepachangelog.com/it/1.1.0/)
 e questo progetto aderisce al [Semantic Versioning](https://semver.org/lang/it/).
 
+## [2.3.2] - 2026-11-17
+
+### Fixed
+- Prodotto: gli attributi SEO **Meta Robots**, **Canonical URL**, **Hreflang URL** e **Is in Sitemap** erano creati con *Visibile nelle pagine del catalogo* = Sì e comparivano nella scheda *Maggiori informazioni* (More Information) e nel confronto prodotti. La data patch `HideProductSeoAttributesOnFront` li nasconde dal frontend (`is_visible_on_front` e `is_comparable` = 0) sulle installazioni esistenti; le nuove installazioni li creano già nascosti. Nessun effetto su meta robots, canonical, hreflang e sitemap.
+
 ## [2.3.1] - 2026-11-16
 
 ### Changed

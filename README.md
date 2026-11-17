@@ -36,7 +36,7 @@ This module is **not yet available to buy**. It is a commercial product and is c
 
 ## Configuration
 
-*Stores → Configuration → Threecommerce Plugins → Seo Config*: groups for CMS page, category, product, sitemap and product structured data (enable, version attribute code, FAQ attribute code, `applicationCategory`, `operatingSystem`, organization name). Per-page fields are in the *Search Engine Optimization* section of products, categories and CMS pages.
+*Stores → Configuration → Threecommerce Plugins → Seo Config*: groups for CMS page, category, product, sitemap and product structured data (enable, version attribute code, FAQ attribute code, `applicationCategory`, `operatingSystem`, organization name). Per-page fields are in the *Search Engine Optimization* section of products, categories and CMS pages; on products they are admin-only and never shown on the storefront (More Information tab, compare list).
 
 ## Documentation and support
 
