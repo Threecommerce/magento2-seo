@@ -10,8 +10,10 @@ Magento sets meta robots only at store level, generates no structured data and p
 ## Features
 
 - **Meta robots** per product, category and CMS page (Index/Noindex, Follow/Nofollow). If the field is empty the general store setting applies.
-- **Canonical**: can be removed from a single product or category, and is added to CMS pages as well.
+- **Canonical**: can be removed from a single product or category, and is added to CMS pages as well. With Mageplaza Blog, the blog listing pages (index, category, tag, topic, month, author) get a canonical too; pagination stays self-canonical.
 - **Hreflang** between store views in different languages for products, categories and CMS pages, with `x-default` on the default store. No tag is printed if the store has a single language.
+- **Translated pages with different URLs**: an *Hreflang Key* field on CMS pages links translations such as `chi-siamo` and `about-us`. With Mageplaza Blog, hreflang is added to the blog home, posts and categories; translated posts and categories with different URL keys are linked with `bin/magento seo:hreflang:link`.
+- **Language switch to the translated page**: changing store view from the language switcher (or a geoip redirect) lands on the translated CMS page, blog post or category instead of the home page or a 404.
 - **Custom H1** for categories, different from the name used in menu and breadcrumb.
 - **Open Graph image** (`og:image`) for CMS pages.
 - **JSON-LD** on the product page: `Product` or `SoftwareApplication` with price, availability and ratings, plus `FAQPage` built from the product FAQ attribute. Off by default.
@@ -36,12 +38,12 @@ This module is **not yet available to buy**. It is a commercial product and is c
 
 ## Configuration
 
-*Stores → Configuration → Threecommerce Plugins → Seo Config*: groups for CMS page, category, product, sitemap and product structured data (enable, version attribute code, FAQ attribute code, `applicationCategory`, `operatingSystem`, organization name). Per-page fields are in the *Search Engine Optimization* section of products, categories and CMS pages; on products they are admin-only and never shown on the storefront (More Information tab, compare list).
+*Stores → Configuration → Threecommerce Plugins → Seo Config* (labels in English, Italian translation included): groups for CMS page (hreflang, language switch to the translated page), category, product, Mageplaza blog, sitemap and product structured data (enable, version attribute code, FAQ attribute code, `applicationCategory`, `operatingSystem`, organization name). Per-page fields are in the *Search Engine Optimization* section of products, categories and CMS pages; on products they are admin-only and never shown on the storefront (More Information tab, compare list).
 
 ## Documentation and support
 
 - Product page: [threecommerce.it/seo-meta-robots-dati-strutturati-sitemap-magento-2](https://www.threecommerce.it/seo-meta-robots-dati-strutturati-sitemap-magento-2?utm_source=github&utm_medium=readme&utm_campaign=magento2-seo)
-- [Changelog](CHANGELOG.md)
+- [Changelog](CHANGELOG.md) (in Italian)
 - Support and custom development: [threecommerce.it/contatti](https://www.threecommerce.it/contatti?utm_source=github&utm_medium=readme&utm_campaign=magento2-seo)
 
 ---
