@@ -4,7 +4,7 @@ Magento sets meta robots only at store level, generates no structured data and p
 
 ![SEO fields of a category in the Magento admin](images/seo-category-fields.png)
 
-**Compatibility:** Magento Open Source / Adobe Commerce 2.4.4 – 2.4.9 · Mage-OS 1.x / 3.x · PHP 8.1 – 8.4 · Themes: Luma, Hyvä, Breeze
+**Compatibility:** Magento Open Source / Adobe Commerce 2.4.4 – 2.4.9 · Mage-OS 1.x / 3.x · PHP 8.1 – 8.5 · Themes: Luma, Hyvä, Breeze
 **License:** commercial · coming soon
 
 ## Features
